@@ -1,19 +1,38 @@
 const items = [
   {
-    name: 'Ironhack T',
+    name: 'T-shirt',
     price: 10,
+    img: 'img/tee.png'
   },
   {
-    name: 'Ironhack Hoodie',
+    name: 'Cap',
     price: 15,
+    img: 'img/caps.png'
   },
   {
-    name: 'Ironhack Sticker',
+    name: 'Notebook',
     price: 2,
+    img: 'img/notebooks.png'
   },
   {
     name: 'Ironhack Mug',
     price: 8,
+    img: 'img/mugs.png'
+  },
+  {
+    name: 'Embossed stamp',
+    price: 8,
+    img: 'img/embossedstamp.png'
+  },
+  {
+    name: 'Flag',
+    price: 8,
+    img: 'img/flags.png'
+  },
+  {
+    name: 'Totebag',
+    price: 8,
+    img: 'img/totebags.png'
   },
 ]
 
@@ -54,11 +73,13 @@ function updateTotal() {
 items.forEach((item, i) => {
   section.innerHTML += `
     <article class="item">
-      <img src="https://miro.medium.com/max/5190/1*aVsUjp1zvlRb1799gDjbLA@2x.jpeg"/>
+      <img src="${item.img}"/>
       <p>${item.name}</p>
       <small>$${String(item.price) + '.00'}</small>
-      <input type="number" placeholder="quantity" onchange='inputChange(${i}, "${item.name}", ${item.price})'/>
-      <button>Add to cart</button>
+      <div>
+        <input type="number" placeholder="quantity" onchange='inputChange(${i}, "${item.name}", ${item.price})'/>
+        <button>Add to cart</button>
+      </div>
     </article>
   `
 })
